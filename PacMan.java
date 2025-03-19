@@ -5,11 +5,6 @@ import javax.swing.*;
 
 public class PacMan {
     public static void main(String[] args) {
-        if (args.length < 1){
-            System.out.println("[ERROR]: ingen fil gitt");
-            System.exit(1);
-        }
-
         JFrame meny = new JFrame("PacMan MENY");
         meny.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -24,7 +19,7 @@ public class PacMan {
             @Override
             public void actionPerformed(ActionEvent e){
                 meny.dispose();
-                new Controller(new File(args[0]));
+                new Controller(new File("pacman.txt"));
             }
         }
         start.addActionListener(new StartAction());
